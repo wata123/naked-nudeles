@@ -1,5 +1,18 @@
 window.onload = function() {
-  alert("WARNING: AGES 18 AND OVER ONLY.");
+  // alert("WARNING: AGES 18 AND OVER ONLY.");
+  let response = window.prompt("What is your age?");
+
+  function check() {
+    if (Number(response) >= 18) {
+      alert("Ok.");
+    }
+    else {
+      alert("Sorry, you can't enter.")
+      window.location.href = "error.html";
+    }
+  }
+  check();
+
   let imagebox = document.getElementById("imagebox");
 
   //Generate animation boxes.
