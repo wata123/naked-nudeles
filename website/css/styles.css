@@ -1,0 +1,72 @@
+html, body, p, ul, h1, h2, h3, h4, h5 {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: auto;
+  width; auto;
+  background-color: yellow;
+}
+
+nav {
+  height: 100px;
+  width: inherit;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  height: 30px;
+  width: 200px;
+  background-color: brown;
+  list-style-type: none;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.main {
+  height: 800px;
+  width: auto;
+  background-color: pink;
+}
+
+.featured {
+  height: 800px;
+  width: auto;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  height: 100px;
+  width: 80%;
+  background-color: blue;
+}
+
+.featured-gallery {
+  height: 200px;
+  width: 80%;
+  background-color: teal;
+}
+
+.babes {
+  height: 500px;
+  width: auto;
+  background-color: purple;
+}
+
+.category {
+  height: 200px;
+  width: auto;
+  background-color: orange;
+  margin-top: 10px;
+}
