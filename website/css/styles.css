@@ -8,12 +8,31 @@ h1, h2, h3, h4, h5 {
   color: rgb(30,30,30);
 }
 
+@keyframes fade {
+  from {
+    opacity: 1;
+    /*background-color: rgb(54,139,144);*/
+    background-color: red;
+  }
 
+  to {
+    opacity: 0;
+    top: 500px;
+    display: none;
+    /*background-color: rgb(55,41,41);*/
+    background-color: orange;
+  }
+}
 
 .container {
   height: 2000px;
   width; auto;
   background-color: black;
+}
+
+.particle {
+  animation-duration: 3s;
+  animation-name: fade;
 }
 
 nav {
