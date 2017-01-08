@@ -9,42 +9,47 @@ db.docs.insert([{
     id: 1,
     img: './imgs/boo.jpg',
     rating: 5,
-    description: 'Naked Nudeles',
+    description: 'Nookake',
   }, {
     id: 2,
     img: './imgs/censored.jpg',
     rating: 3,
-    description: 'Naked Nudeles 2',
+    description: 'Hairy Noodle',
   }, {
     id: 3,
     img: './imgs/scurd.jpg',
     rating: 4,
-    description: 'Naked Nudeles',
+    description: 'Spooning',
   }, {
     id: 4,
     img: './imgs/wrecking-noodles.jpg',
     rating: 5,
-    description: 'Naked Nudeles',
+    description: 'Wrecking Noodle',
   }, {
     id: 5,
     img: './imgs/sarahmarshall.jpg',
     rating: 2,
-    description: 'Naked Nudeles 2',
+    description: 'Noodle Marshall',
   }, {
     id: 6,
     img: './imgs/noodle-blum.jpg',
     rating: 4,
-    description: 'Naked Nudeles',
+    description: 'Jurassic Noodle',
   }, {
     id: 7,
     img: './imgs/noodle-sandre.jpg',
     rating: 1,
-    description: 'Naked Nudeles',
+    description: 'Noodlesandre',
   }, {
     id: 8,
     img: './imgs/american-noodles.jpg',
     rating: 4,
-    description: 'Naked Nudeles',
+    description: 'American Noodles',
+  }, {
+    id: 9,
+    img: './imgs/dancer.jpg',
+    rating: 5,
+    description: 'Make it RAIN',
 }]);
 
 print ('docs database');

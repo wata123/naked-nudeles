@@ -222,6 +222,7 @@ nav ul {
 }
 
 .images {
+  color: white;
   height: 300px;
   width: 200px;
   /*background-color: red;*/
@@ -272,10 +273,6 @@ nav ul {
     filter: grayscale(0%);
 }
 
-input:checked {
-  filter: grayscale(0%);
-}
-
 .rating-box:not(:checked) > label:hover:before,
 .rating-box:not(:checked) > label:hover ~ label:before {
     /*color: gold;*/
@@ -295,4 +292,25 @@ input:checked {
     position:relative;
     top:2px;
     left:2px;
+}
+
+.addphoto{
+  text-align: center;
+  color: white;
+}
+
+h1{
+  color: white;
+}
+
+h1:hover{
+  color: red;
+}
+
+h4 {
+  color: white;
+}
+
+h5{
+  color: white;
 }
