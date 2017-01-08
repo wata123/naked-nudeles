@@ -1,15 +1,16 @@
 'use strict'
 const express = require('express');
 const mongoose = require('mongoose');
+const pug = require('pug');
 const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const CONFIG = require('./config.json');
 
-// SET UP CONNECTION TO MONGO DATABASE //
+// SET UP CONNECTION TO MONGO DATABASE
 mongoose.connect(CONFIG.MONGO_URI);
 
-// CHECK MONGODB CONNECTION ONCE MONGOOSE CONNECTS //
+// CHECK MONGODB CONNECTION ONCE MONGOOSE CONNECTS
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.connection.once('open', function(){
   console.log("Connected to MongoDB");
@@ -26,18 +27,26 @@ const docSchema = new Schema({
 
 let Doc = mongoose.model('Doc', docSchema);
 
+app.set('views', path.resolve(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 app.use('/', express.static(path.join(__dirname, 'website')));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) =>{
-  return res.render('index.html');
+  Doc.find()
+  .then((results) => {
+    return res.render('index', {data: results});
+  });
 });
 
 app.get('/image/:id', (req, res) => {
-  Doc.findOne({
-    id: req.body.id
+  console.log(req.params);
+  Doc.find({
+    id: req.params.id
   })
   .then((results) => {
+    console.log(results);
     return res.json(results);
   });
 });

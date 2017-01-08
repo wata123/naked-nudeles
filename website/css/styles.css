@@ -8,16 +8,88 @@ h1, h2, h3, h4, h5 {
   color: rgb(30,30,30);
 }
 
+@keyframes hot {
+  from {
+    color: rgb(155,0,0);
+  }
+  50% {
+    color: orange;
+  }
+  to {
+    color: rgb(155,0,0);
 
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+    /*background-color: rgb(54,139,144);*/
+    background-color: red;
+  }
+
+  to {
+    opacity: 0;
+    top: 500px;
+    display: none;
+    /*background-color: rgb(55,41,41);*/
+    background-color: orange;
+  }
+}
 
 .container {
   height: 2000px;
   width; auto;
   background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-nav {
+.right {
+  width: 300px;
+  height: 2000px;
+  /*background-color: white;*/
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left {
+  width: 300px;
+  height: 2000px;
+  /*background-color: `white;*/
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.particle {
+  animation-duration: 3s;
+  animation-name: fade;
+}
+
+.hotwords {
   height: 100px;
+  width: 850px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /*background-color: pink;*/
+}
+.hotwords h1 {
+  font-size: 80px;
+  height: auto;
+  width: auto;
+  position: absolute;
+  animation-name: hot;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+nav {
+  height: 120px;
   width: inherit;
   /*background-color: orange;*/
   display: flex;
@@ -45,7 +117,7 @@ nav ul {
 }
 
 .featured {
-  height: 500px;
+  height: 600px;
   width: auto;
   /*background-color: red;*/
   display: flex;
@@ -56,15 +128,39 @@ nav ul {
 
 .featured-gallery {
   height: inherit;
-  width: 80%;
+  width: 850px;
   /*background-color: teal;*/
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .featured-gallery .description h1 {
-  color: rgb(70,0,0);
+  color: rgb(90,0,0);
+  font-size: 100px;
+  /*color: black;*/
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-scroll {
+  width: 500px;
+  height: 300px;
+  /*background-color: blue;*/
+  display: flex;
+  overflow-x: scroll;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.image-scroll img {
+  position: relative;
 }
 
 .description {
@@ -82,6 +178,7 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .category {
@@ -109,7 +206,7 @@ nav ul {
 }
 
 .babebox {
-  height: 1000px;
+  height: 900px;
   width: 900px;
   /*background-color: blue;*/
   display: flex;
@@ -117,6 +214,7 @@ nav ul {
   align-items: center;
   flex-wrap: wrap;
   overflow: scroll;
+  flex-direction: column;
 }
 
 .images {
