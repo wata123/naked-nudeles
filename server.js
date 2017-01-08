@@ -62,7 +62,7 @@ app.get('/successNudele', (req, res) => {
   res.render('successNudele');
 })
 
-app.post('/image/new', (req, res) => {
+app.post('/newNudele', (req, res) => {
   Doc.create({
     img: req.body.url,
     rating: req.body.rating,
