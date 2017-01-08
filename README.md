@@ -1,5 +1,5 @@
-# naked-nudeles
+Naked Nudeles
+=============
 
-testing lol
-
-lol
+View the HOTTEST NOODS you'll find on the interwebz
+---------------------------------------------------
