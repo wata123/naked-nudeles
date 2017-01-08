@@ -23,5 +23,5 @@ window.onload = function() {
     cancelAnimationFrame(requestID);
   }
 
-    generate();
+    // generate();
 }
