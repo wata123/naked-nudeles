@@ -6,4 +6,8 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title Document
   body
-    script(src='js/initial.js')
+    form(method='POST' action='/verify' enctype='application/x-www-form-urlencoded')
+      fieldset
+        h1 Enter your age
+        input(type='number' name='age' value='')
+        input(type='submit' value='Submit')
