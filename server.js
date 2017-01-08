@@ -34,7 +34,14 @@ app.use('/', express.static(path.join(__dirname, 'website')));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) =>{
-  return res.render('index', {});
+  return res.render('verify', {});
+});
+
+app.get('/api/images', (req, res) =>{
+  Doc.find({})
+  .then((results) => {
+  return res.json(results);
+  });
 });
 
 app.get('/image/:id', (req, res) => {
@@ -58,7 +65,7 @@ app.post('/verify', (req, res) => {
   }
   Doc.find()
   .then((results) => {
-    return res.render('../website/home', {data: results});
+    return res.render('index', {data: results});
   });
 })
 

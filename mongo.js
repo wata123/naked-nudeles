@@ -8,12 +8,12 @@ db.createCollection('docs');
 db.docs.insert([{
     id: 1,
     img: 'https://s-media-cache-ak0.pinimg.com/originals/92/bd/6a/92bd6aea2a5bc1c751a8bbf096fc959f.jpg',
-    rating: 0,
+    rating: 4,
     description: 'Naked Nudeles',
   }, {
     id: 2,
     img: 'https://s-media-cache-ak0.pinimg.com/originals/92/bd/6a/92bd6aea2a5bc1c751a8bbf096fc959f.jpg',
-    rating: 0,
+    rating: 3,
     description: 'Naked Nudeles 2',
 }]);
 
