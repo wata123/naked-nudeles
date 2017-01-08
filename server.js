@@ -16,7 +16,7 @@ mongoose.connection.once('open', function(){
   console.log("Connected to MongoDB");
 });
 
-// CREATE SCHEMA & MODEL FOR 'Nake Nudeles'
+
 const Schema = mongoose.Schema;
 const docSchema = new Schema({
   id: Number,
@@ -57,6 +57,25 @@ app.get('/image/:id', (req, res) => {
     console.log(results);
     return res.json(results);
   });
+});
+
+app.get('/newNudele', (req, res) => {
+  res.render('newNudele');
+});
+
+app.get('/successNudele', (req, res) => {
+  res.render('successNudele');
+})
+
+app.post('/newNudele', (req, res) => {
+  Doc.create({
+    img: req.body.url,
+    rating: req.body.rating,
+    description: req.body.description,
+  })
+  .then(function (result) {
+    res.render('successNudele');
+  })
 });
 
 const server = app.listen(6969, () => {
