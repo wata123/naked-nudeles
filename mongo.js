@@ -7,14 +7,44 @@ db.createCollection('docs');
 
 db.docs.insert([{
     id: 1,
-    img: 'https://s-media-cache-ak0.pinimg.com/originals/92/bd/6a/92bd6aea2a5bc1c751a8bbf096fc959f.jpg',
-    rating: 4,
+    img: './imgs/boo.jpg',
+    rating: 5,
     description: 'Naked Nudeles',
   }, {
     id: 2,
-    img: 'https://s-media-cache-ak0.pinimg.com/originals/92/bd/6a/92bd6aea2a5bc1c751a8bbf096fc959f.jpg',
+    img: './imgs/censored.jpg',
     rating: 3,
     description: 'Naked Nudeles 2',
+  }, {
+    id: 3,
+    img: './imgs/scurd.jpg',
+    rating: 4,
+    description: 'Naked Nudeles',
+  }, {
+    id: 4,
+    img: './imgs/wrecking-noodles.jpg',
+    rating: 5,
+    description: 'Naked Nudeles',
+  }, {
+    id: 5,
+    img: './imgs/sarahmarshall.jpg',
+    rating: 2,
+    description: 'Naked Nudeles 2',
+  }, {
+    id: 6,
+    img: './imgs/noodle-blum.jpg',
+    rating: 4,
+    description: 'Naked Nudeles',
+  }, {
+    id: 7,
+    img: './imgs/noodle-sandre.jpg',
+    rating: 1,
+    description: 'Naked Nudeles',
+  }, {
+    id: 8,
+    img: './imgs/american-noodles.jpg',
+    rating: 4,
+    description: 'Naked Nudeles',
 }]);
 
 print ('docs database');
