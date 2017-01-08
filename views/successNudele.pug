@@ -24,23 +24,6 @@ html(lang='en')
     .mainContainer
       .addContainer
         .addTitle
-          h1 Add a Nudele
-        .formContainer
-          form(action="/reviews", method="POST", id="addReviewForm", enctype="multipart/form-data")
-            .form-group
-              label Image URL
-              input.form-control(type="text", name="url")
-            .form-group
-              label Rating
-              input.form-control(type="text", name="rating")
-            .form-group
-              label Description
-              textarea.form-control(rows="10", type="text", name="description")
-            //- .form-group
-            //-   label.btn.btn-default.btn-file(for='pic')
-            //-   | Upload photo
-            //-   input#pic(style="display:none", type='file', name='pic', onchange='previewFile()')
-            //-   img#upload-file-info.label.label-info(style="display:none")
-            button.btn.btn-primary(type="submit", value="Submit") Submit
+          h1 ~ ~ ~ Successfully added Nudele ~ ~ ~
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')

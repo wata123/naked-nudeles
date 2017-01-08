@@ -54,6 +54,25 @@ app.get('/image/:id', (req, res) => {
   });
 });
 
+app.get('/newNudele', (req, res) => {
+  res.render('newNudele');
+});
+
+app.get('/successNudele', (req, res) => {
+  res.render('successNudele');
+})
+
+app.post('/image/new', (req, res) => {
+  Doc.create({
+    img: req.body.url,
+    rating: req.body.rating,
+    description: req.body.description,
+  })
+  .then(function (result) {
+    res.render('successNudele');
+  })
+});
+
 const server = app.listen(6968, () => {
   console.log(`Connected on port ${server.address().port}`);
 });
