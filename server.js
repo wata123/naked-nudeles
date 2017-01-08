@@ -7,16 +7,16 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const CONFIG = require('./config.json');
 
-SET UP CONNECTION TO MONGO DATABASE //
+//SET UP CONNECTION TO MONGO DATABASE //
 mongoose.connect(CONFIG.MONGO_URI);
 
-CHECK MONGODB CONNECTION ONCE MONGOOSE CONNECTS //
+//CHECK MONGODB CONNECTION ONCE MONGOOSE CONNECTS //
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.connection.once('open', function(){
   console.log("Connected to MongoDB");
 });
 
-CREATE SCHEMA & MODEL FOR 'Nake Nudeles'
+//CREATE SCHEMA & MODEL FOR 'Nake Nudeles'
 const Schema = mongoose.Schema;
 const docSchema = new Schema({
   id: Number,
