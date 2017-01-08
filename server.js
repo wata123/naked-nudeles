@@ -1,6 +1,7 @@
 'use strict'
 const express = require('express');
 const mongoose = require('mongoose');
+const pug = require('pug');
 const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -26,18 +27,26 @@ const docSchema = new Schema({
 
 let Doc = mongoose.model('Doc', docSchema);
 
+app.set('views', path.resolve(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 app.use('/', express.static(path.join(__dirname, 'website')));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) =>{
-  return res.render('index.html');
+  Doc.find()
+  .then(function (data){
+  return res.render('index', {data: data});
+  });
 });
 
 app.get('/image/:id', (req, res) => {
-  Doc.findOne({
-    id: req.body.id
+  console.log(req.params);
+  Doc.find({
+    id: req.params.id
   })
   .then((results) => {
+    console.log(results);
     return res.json(results);
   });
 });
