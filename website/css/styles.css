@@ -222,6 +222,7 @@ nav ul {
 }
 
 .images {
+  color: white;
   height: 300px;
   width: 200px;
   /*background-color: red;*/
@@ -254,4 +255,19 @@ nav ul {
    position: absolute;
    left: 0;
    color: gold;
+}
+
+.addphoto{
+  text-align: center;
+  color: white;
+}
+h1{
+  color: white;
+}
+h4 {
+  color: white;
+}
+
+h5{
+  color: white;
 }
