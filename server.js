@@ -34,9 +34,17 @@ app.use('/', express.static(path.join(__dirname, 'website')));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) =>{
+  console.log('req', req);
   Doc.find()
   .then((results) => {
     return res.render('index', {data: results});
+  });
+});
+
+app.get('/api/images', (req, res) =>{
+  Doc.find({})
+  .then((results) => {
+  return res.json(results);
   });
 });
 
