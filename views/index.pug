@@ -52,78 +52,15 @@ html(lang='en')
               img(height='100px', src='imgs/fire.jpg', alt='')
               img(height='100px', src='imgs/fire.jpg', alt='')
             section.babebox
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
+              - for (var i = 0; i < data.length; i++) {
+                  section.images
+                    img(src='sdfdjkl', width='200px', height='200px', alt='')
+                    section.name
+                      h4 Name: #{data[i].description}
+                    section.rating
+                      h5 Rating: #{data[i].rating}
+              - }
+
       section.left
         img(width='200px', src='imgs/ad1.jpg', alt='')
         img(width='200px', src='imgs/jp1.jpg', alt='')
