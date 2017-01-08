@@ -49,78 +49,16 @@ html(lang='en')
               img(height='100px', src='imgs/ads/fire.jpg', alt='')
               img(height='100px', src='imgs/ads/fire.jpg', alt='')
             section.babebox
-              section.images
-                img(src='imgs/boo.jpg', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='imgs/poonicorn.jpg', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='imgs/scurd.jpg', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
-              section.images
-                img(src='sdfdjkl', width='200px', height='200px', alt='')
-                section.name
-                  h4 Name
-                section.rating
-                  h5 Rating
+
+              - for (var i = 0; i < data.length; i++) {
+                  section.images
+                    img(src='sdfdjkl', width='200px', height='200px', alt='')
+                    section.name
+                      h4 Name: #{data[i].description}
+                    section.rating
+                      h5 Rating: #{data[i].rating}
+              - }
+
       section.left
         img(width='250px', src='imgs/ads/cravebabes.jpg', alt='')
         img(width='250px', src='imgs/ads/jp3.jpg', alt='')
