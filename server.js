@@ -34,10 +34,7 @@ app.use('/', express.static(path.join(__dirname, 'website')));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) =>{
-  Doc.find()
-  .then((results) => {
-    return res.render('index', {data: results});
-  });
+  return res.render('index', {});
 });
 
 app.get('/image/:id', (req, res) => {
@@ -52,7 +49,17 @@ app.get('/image/:id', (req, res) => {
 });
 
 app.post('/verify', (req, res) => {
-  console.log(req.body);
+  let locals = req.body;
+  if (!locals) {
+    return res.send('FAIL!');
+  }
+  if (locals.age < 18) {
+    return res.redirect('http://mylittlepony.hasbro.com/en-us');
+  }
+  Doc.find()
+  .then((results) => {
+    return res.render('../website/home', {data: results});
+  });
 })
 
 const server = app.listen(6969, () => {
