@@ -236,22 +236,21 @@ nav ul {
 .rating {
   text-align: center;
 }
-<<<<<<< HEAD
 
-fieldset {
+.rating-box {
     float:left;
 }
 
 /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
    follow these rules. Every browser that supports :checked also supports :not(), so
    it doesn’t make the test unnecessarily selective */
-fieldset:not(:checked) > input {
+.rating-box:not(:checked) > input {
     position:absolute;
     /*top:-9999px;*/
     clip:rect(0,0,0,0);
 }
 
-fieldset:not(:checked) > label {
+.rating-box:not(:checked) > label {
     float:right;
     width:1em;
     /*padding:0 .1em;*/
@@ -263,32 +262,36 @@ fieldset:not(:checked) > label {
     color:#ddd;
 }
 
-fieldset:not(:checked) > label:before {
+.rating-box:not(:checked) > label:before {
     content: '🍜 ';
     filter: grayscale(100%);
 }
 
-fieldset > input:checked ~ label:before {
+.rating-box > input:checked ~ label:before {
     /*color: #f70;*/
     filter: grayscale(0%);
 }
 
-fieldset:not(:checked) > label:hover:before,
-fieldset:not(:checked) > label:hover ~ label:before {
+input:checked {
+  filter: grayscale(0%);
+}
+
+.rating-box:not(:checked) > label:hover:before,
+.rating-box:not(:checked) > label:hover ~ label:before {
     /*color: gold;*/
     filter: grayscale(0%);
 }
 
-fieldset > input:checked + label:hover,
-fieldset > input:checked + label:hover ~ label:before,
-fieldset > input:checked ~ label:hover,
-fieldset > input:checked ~ label:hover ~ label:before,
-fieldset > label:hover ~ input:checked ~ label:before {
+.rating-box > input:checked + label:hover,
+.rating-box > input:checked + label:hover ~ label:before,
+.rating-box > input:checked ~ label:hover,
+.rating-box > input:checked ~ label:hover ~ label:before,
+.rating-box > label:hover ~ input:checked ~ label:before {
     /*color: #ea0;*/
     filter: grayscale(0%);
 }
 
-fieldset > label:active {
+.rating-box > label:active {
     position:relative;
     top:2px;
     left:2px;
