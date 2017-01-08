@@ -51,6 +51,10 @@ app.get('/image/:id', (req, res) => {
   });
 });
 
+app.post('/verify', (req, res) => {
+  console.log(req.body);
+})
+
 const server = app.listen(6969, () => {
   console.log(`Connected on port ${server.address().port}`);
 });
