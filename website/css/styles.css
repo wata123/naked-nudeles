@@ -235,26 +235,63 @@ nav ul {
 }
 
 .rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
   text-align: center;
 }
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-  color: white;
+
+.rating-box {
+    float:left;
 }
-.rating > span:hover,
-.rating > span:hover ~ span {
-  color: transparent;
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating-box:not(:checked) > input {
+    position:absolute;
+    /*top:-9999px;*/
+    clip:rect(0,0,0,0);
 }
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-   left: 0;
-   color: gold;
+
+.rating-box:not(:checked) > label {
+    float:right;
+    width:1em;
+    /*padding:0 .1em;*/
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+}
+
+.rating-box:not(:checked) > label:before {
+    content: '🍜 ';
+    filter: grayscale(100%);
+}
+
+.rating-box > input:checked ~ label:before {
+    /*color: #f70;*/
+    filter: grayscale(0%);
+}
+
+.rating-box:not(:checked) > label:hover:before,
+.rating-box:not(:checked) > label:hover ~ label:before {
+    /*color: gold;*/
+    filter: grayscale(0%);
+}
+
+.rating-box > input:checked + label:hover,
+.rating-box > input:checked + label:hover ~ label:before,
+.rating-box > input:checked ~ label:hover,
+.rating-box > input:checked ~ label:hover ~ label:before,
+.rating-box > label:hover ~ input:checked ~ label:before {
+    /*color: #ea0;*/
+    filter: grayscale(0%);
+}
+
+.rating-box > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
 }
 
 .addphoto{

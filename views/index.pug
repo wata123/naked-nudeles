@@ -56,6 +56,18 @@ html(lang='en')
                       h4 Name: #{data[i].description}
                     section.rating
                       h5 Rating: #{data[i].rating}
+                      form
+                        fieldset.rating-box
+                          input(id="star5-" + i, type='radio', name='rating', value='5')
+                          label(for='star5-' + i, title='Rocks!')
+                          input(id="star4-" + i type='radio', name='rating', value='4')
+                          label(for='star4-' + i, title='Pretty good')
+                          input(id="star3-" + i, type='radio', name='rating', value='3')
+                          label(for='star3-' + i, title='Meh')
+                          input(id='star2-' + i type='radio', name='rating', value='2')
+                          label(for='star2-' + i, title='Kinda bad')
+                          input(id='star1-' + i type='radio', name='rating', value='1')
+                          label(for='star1-' + i, title='Sucks big time')
               - }
           section.addphoto
             a(href='newNudele')
@@ -67,3 +79,5 @@ html(lang='en')
         img(width='250px', src='imgs/ads/ad2.jpg', alt='')
         img(width='250px', src='imgs/ads/penpasta.jpg', alt='')
         img(width='250px', src='imgs/ads/jp1.jpg', alt='')
+
+    script(src='js/index.js')
