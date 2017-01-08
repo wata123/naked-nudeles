@@ -4,7 +4,7 @@ window.onload = function() {
   function check() {
     if (Number(response) >= 18) {
       alert("Ok.");
-      window.location.href = "index.html";
+      window.location.href = "home.pug";
     }
     else {
       alert("Sorry, you can't enter.")
