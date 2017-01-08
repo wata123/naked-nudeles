@@ -41,10 +41,12 @@ app.get('/', (req, res) =>{
 });
 
 app.get('/image/:id', (req, res) => {
-  Doc.findOne({
-    id: req.body.id
+  console.log(req.params);
+  Doc.find({
+    id: req.params.id
   })
   .then((results) => {
+    console.log(results);
     return res.json(results);
   });
 });
