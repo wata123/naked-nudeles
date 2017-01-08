@@ -181,6 +181,10 @@ nav ul {
   flex-direction: column;
 }
 
+.babes img{
+  object-fit: cover;
+}
+
 .category {
   height: 400px;
   width: auto;
