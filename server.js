@@ -23,6 +23,7 @@ const docSchema = new Schema({
   img: String,
   rating: Number,
   description: String,
+  numRates: Number
 });
 
 let Doc = mongoose.model('Doc', docSchema);
@@ -67,7 +68,22 @@ app.post('/verify', (req, res) => {
   .then((results) => {
     return res.render('index', {data: results});
   });
-})
+});
+
+app.get('/rating/:id/:value', (req, res) => {
+  Doc.find({
+    id: req.params.id
+  }).then((result) => {
+    let newRating = Math.round((result[0].rating + parseInt(req.params.value))/(result[0].numRates + 1));
+    Doc.update({ id: req.params.id }, {
+      rating: newRating,
+      numRates: result[0].numRates + 1,
+    }, function(err, image) {
+        if (err) throw err;
+        res.json(newRating);
+    });
+  });
+});
 
 app.get('/newNudele', (req, res) => {
   res.render('newNudele');
