@@ -5,6 +5,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     link(rel='stylesheet', href='css/styles.css')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
     title Naked Nudeles
   body
     .container
@@ -50,12 +51,13 @@ html(lang='en')
               img(height='100px', src='imgs/ads/fire.jpg', alt='')
             section.babebox
               - for (var i = 0; i < data.length; i++) {
-                  section.images
+                  section.images(id='image' + data[i].id)
                     img(src=data[i].img, width='200px', height='200px', alt='')
                     section.name
                       h4 Name: #{data[i].description}
-                    section.rating
-                      h5 Rating: #{data[i].rating}
+                    section.rating(id=data[i].id)
+                      h5 Rating:
+                        span(id='value-' + data[i].id) #{' ' + data[i].rating}
                       form
                         fieldset.rating-box
                           input(id="star5-" + i, type='radio', name='rating', value='5')
@@ -71,7 +73,7 @@ html(lang='en')
               - }
           section.addphoto
             a(href='newNudele')
-              h1 Submit your own photo
+              h1 Submit your noods!
       section.left
         img(width='250px', src='imgs/ads/cravebabes.jpg', alt='')
         img(width='250px', src='imgs/ads/jp3.jpg', alt='')
