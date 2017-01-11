@@ -23,5 +23,23 @@ window.onload = function() {
     cancelAnimationFrame(requestID);
   }
 
+  var radioInputs = document.querySelectorAll('input');
+  for(var i = 0; i < radioInputs.length; i++) {
+    radioInputs[i].onclick = function () {
+      var imageRatingId = this.parentNode.parentNode.parentNode.id;
+      $.ajax({
+        type: 'GET',
+        url: '/rating/' + imageRatingId + '/' + this.value,
+        success: function (data) {
+          $('#value-' + imageRatingId).text(' ' + data);
+        },
+        error: function () {
+          console.log('did not work');
+        }
+      });
+    };
+  }
+
+
     // generate();
 }
