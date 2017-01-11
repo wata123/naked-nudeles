@@ -23,6 +23,19 @@ window.onload = function() {
     cancelAnimationFrame(requestID);
   }
 
+  // function showRatings() {
+  //   $.ajax({
+  //     type: 'GET',
+  //     url: '/rating/' + imageRatingId + '/' + this.value,
+  //     success: function (data) {
+  //       $('#value-' + imageRatingId).text(' ' + data.rating);
+  //     },
+  //     error: function () {
+  //       console.log('did not work');
+  //     }
+  //   });
+  // }
+
   function inputClicks() {
     var radioInputs = document.querySelectorAll('input');
     for(var i = 0; i < radioInputs.length; i++) {
@@ -32,7 +45,7 @@ window.onload = function() {
           type: 'GET',
           url: '/rating/' + imageRatingId + '/' + this.value,
           success: function (data) {
-            $('#value-' + imageRatingId).text(' ' + data);
+            $('#value-' + imageRatingId).text(' ' + data.rating);
           },
           error: function () {
             console.log('did not work');

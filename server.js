@@ -83,7 +83,7 @@ app.get('/rating/:id/:value', (req, res) => {
       numRates: result[0].numRates + 1,
     }, function(err, image) {
         if (err) throw err;
-        res.json(newRating);
+        res.json({ rating: newRating, id: req.params.id });
     });
   });
 });
