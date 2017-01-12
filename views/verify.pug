@@ -1,0 +1,13 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Document
+  body
+    form(method='POST' action='/verify' enctype='application/x-www-form-urlencoded')
+      fieldset
+        h1 Enter your age
+        input(type='number' name='age' value='')
+        input(type='submit' value='Submit')

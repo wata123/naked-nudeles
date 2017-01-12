@@ -1,0 +1,316 @@
+html, body, p, ul, h1, h2, h3, h4, h5 {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  color: rgb(30,30,30);
+}
+
+@keyframes hot {
+  from {
+    color: rgb(155,0,0);
+  }
+  50% {
+    color: orange;
+  }
+  to {
+    color: rgb(155,0,0);
+
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+    /*background-color: rgb(54,139,144);*/
+    background-color: red;
+  }
+
+  to {
+    opacity: 0;
+    top: 500px;
+    display: none;
+    /*background-color: rgb(55,41,41);*/
+    background-color: orange;
+  }
+}
+
+.container {
+  height: 2000px;
+  width; auto;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.right {
+  width: 300px;
+  height: 1600px;
+  /*background-color: white;*/
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left {
+  width: 300px;
+  height: 1750px;
+  /*background-color: `white;*/
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.particle {
+  animation-duration: 3s;
+  animation-name: fade;
+}
+
+.hotwords {
+  height: 100px;
+  width: 850px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /*background-color: pink;*/
+}
+.hotwords h1 {
+  font-size: 80px;
+  height: auto;
+  width: auto;
+  position: absolute;
+  animation-name: hot;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+nav {
+  height: 120px;
+  width: inherit;
+  /*background-color: orange;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  height: 30px;
+  width: 200px;
+  /*background-color: brown;*/
+  list-style-type: none;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  font-size: 30px;
+}
+
+.main {
+  height: 800px;
+  width: auto;
+  /*background-color: pink;*/
+}
+
+.featured {
+  height: 600px;
+  width: auto;
+  /*background-color: red;*/
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featured-gallery {
+  height: inherit;
+  width: 1050px;
+  /*background-color: teal;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.featured-gallery .description h1 {
+  color: rgb(90,0,0);
+  font-size: 100px;
+  /*color: black;*/
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-scroll {
+  width: 500px;
+  height: 300px;
+  /*background-color: blue;*/
+  display: flex;
+  overflow-x: scroll;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.image-scroll img {
+  position: relative;
+}
+
+.description {
+  height: auto;
+  width: 500px;
+  display: flex;
+  /*background-color: yellow;*/
+  font-size: 100px;
+}
+
+.babes {
+  height: 1200px;
+  width: auto;
+  /*background-color: purple;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.babes img{
+  object-fit: cover;
+}
+
+.category {
+  height: 400px;
+  width: auto;
+  /*background-color: orange;*/
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.category-title {
+  height: 20px;
+  width: 800px;
+  /*background-color: brown;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+
+}
+
+.babebox {
+  height: 900px;
+  width: 900px;
+  /*background-color: blue;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: scroll;
+  flex-direction: column;
+}
+
+.images {
+  color: white;
+  height: 300px;
+  width: 200px;
+  /*background-color: red;*/
+  margin-left: 10px;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.rating {
+  text-align: center;
+}
+
+.rating-box {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating-box:not(:checked) > input {
+    position:absolute;
+    /*top:-9999px;*/
+    clip:rect(0,0,0,0);
+}
+
+.rating-box:not(:checked) > label {
+    float:right;
+    width:1em;
+    /*padding:0 .1em;*/
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+}
+
+.rating-box:not(:checked) > label:before {
+    content: '🍜 ';
+    filter: grayscale(100%);
+}
+
+.rating-box > input:checked ~ label:before {
+    /*color: #f70;*/
+    filter: grayscale(0%);
+}
+
+.rating-box:not(:checked) > label:hover:before,
+.rating-box:not(:checked) > label:hover ~ label:before {
+    /*color: gold;*/
+    filter: grayscale(0%);
+}
+
+.rating-box > input:checked + label:hover,
+.rating-box > input:checked + label:hover ~ label:before,
+.rating-box > input:checked ~ label:hover,
+.rating-box > input:checked ~ label:hover ~ label:before,
+.rating-box > label:hover ~ input:checked ~ label:before {
+    /*color: #ea0;*/
+    filter: grayscale(0%);
+}
+
+.rating-box > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+.addphoto{
+  text-align: center;
+  color: white;
+}
+
+h1{
+  color: white;
+}
+
+h1:hover{
+  color: red;
+}
+
+h4 {
+  color: white;
+}
+
+h5{
+  color: white;
+}
